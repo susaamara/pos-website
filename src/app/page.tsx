@@ -166,19 +166,24 @@ export default function Home() {
                 Short product video
               </h2>
               <p className="text-sm leading-6 text-white/70">
-                Add your promo video later. For now this is a safe placeholder that you
-                can replace with an MP4 or a YouTube embed.
+                Upload your promo video as <span className="font-mono">public/promo.mp4</span>{" "}
+                in this repo, then redeploy. This section will play it automatically.
               </p>
             </div>
             <div className="mt-5 aspect-video w-full overflow-hidden rounded-xl border border-white/10 bg-zinc-950/40">
-              <div className="flex h-full w-full items-center justify-center p-6 text-center">
-                <div>
-                  <div className="text-sm font-medium">Video placeholder</div>
-                  <div className="mt-1 text-xs text-white/60">
-                    Put your file in `public/promo.mp4` or embed a YouTube link.
-                  </div>
-                </div>
-              </div>
+              <video
+                className="h-full w-full"
+                controls
+                playsInline
+                preload="metadata"
+                poster="/images/video-poster.jpg"
+              >
+                <source src="/promo.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="mt-3 text-xs text-white/60">
+              If you see a 404, the file is not in your repo at{" "}
+              <span className="font-mono">public/promo.mp4</span>.
             </div>
           </div>
         </section>
@@ -201,15 +206,26 @@ export default function Home() {
             </Link>
           </div>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {["Billing screen", "Inventory list", "Reports & analytics"].map((label) => (
+            {[
+              { label: "Billing screen", src: "/images/billing.jpg" },
+              { label: "Inventory list", src: "/images/inventory.jpg" },
+              { label: "Reports & analytics", src: "/images/reports.jpg" },
+            ].map((item) => (
               <div
-                key={label}
+                key={item.label}
                 className="group rounded-2xl border border-white/10 bg-white/5 p-4"
               >
-                <div className="aspect-[16/10] w-full rounded-xl border border-white/10 bg-gradient-to-br from-white/10 to-white/0" />
-                <div className="mt-3 text-sm font-medium">{label}</div>
+                <div className="aspect-[16/10] w-full overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-white/10 to-white/0">
+                  <img
+                    src={item.src}
+                    alt={item.label}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="mt-3 text-sm font-medium">{item.label}</div>
                 <div className="mt-1 text-xs text-white/60">
-                  Replace with your screenshot.
+                  Upload as <span className="font-mono">public{item.src}</span>.
                 </div>
               </div>
             ))}
