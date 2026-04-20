@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## POS marketing website
+
+This project is a simple marketing website for a POS system with:
+
+- A landing page (features, video placeholder, images placeholder)
+- A demo login flow at `/demo/login` (demo-only, no real authentication)
 
 ## Getting Started
 
@@ -6,17 +11,19 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Demo login
+
+- URL: `http://localhost:3000/demo/login`
+- Demo credentials: `demo@pos.local` / `demo123`
+
+## Add your video + images
+
+- **Video**: put your promo video at `public/promo.mp4` (then we can swap the placeholder to a real `<video>` player)
+- **Screenshots**: put images under `public/images/` and we’ll wire them into the gallery
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
