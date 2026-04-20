@@ -36,6 +36,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# embedded POS demo (cloned during build)
+/pos-app
+/_imports
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

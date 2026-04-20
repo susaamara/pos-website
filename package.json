@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build:pos-demo": "npm install --prefix pos-app/client && npm run build --prefix pos-app/client && node scripts/copy-pos-demo.mjs",
+    "build:pos-demo": "node scripts/fetch-pos-app.mjs && npm install --prefix pos-app/client && npm run build --prefix pos-app/client && node scripts/copy-pos-demo.mjs",
     "build": "npm run build:pos-demo && next build",
     "start": "next start",
     "lint": "eslint"
