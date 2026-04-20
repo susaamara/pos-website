@@ -41,6 +41,9 @@ export default function Home() {
             <a className="text-sm text-white/80 hover:text-white" href="#gallery">
               Images
             </a>
+            <Link className="text-sm text-white/80 hover:text-white" href="/pos">
+              POS demo
+            </Link>
             <Link
               className="rounded-full bg-white px-4 py-2 text-sm font-medium text-zinc-950 hover:bg-zinc-100"
               href="/demo/login"
